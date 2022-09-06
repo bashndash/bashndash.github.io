@@ -12,7 +12,7 @@ String binaryRepresentation = Integer.toBinaryString( number );
 Path path = Paths.get( "C:/log/sample.txt" );
 try
 {
-  Files.lines(path).forEach( System.out::println );
+  Files.lines( path ).forEach( System.out::println );
 }
 catch( IOException e )
 {
