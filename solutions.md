@@ -2,9 +2,9 @@
 a collection of samples
 
 ## Table of Contents
-- [Convert an integer into binary representation](#Convert-an-integer-into-binary-representation)
-- [Read a text file line by line using NIO](#Read-a-text-file-line-by-line-using-NIO)
-- [Create SHA-256 checksum of a file](#Create-SHA-256-Checksum-of-a-file)
+- [Convert an integer into binary representation](#convert-an-integer-into-binary-representation)
+- [Read a text file line by line using NIO](#read-a-text-file-line-by-line-using-NIO)
+- [Create SHA-256 checksum of a file](#create-sha-256-Checksum-of-a-file)
 
 ## Convert an integer into binary representation
 ```java
