@@ -7,7 +7,7 @@ int number = 21;
 String binaryRepresentation = Integer.toBinaryString( number );
 ```
 
-## Read a text file line by line using [NIO]
+## Read a text file line by line using [NIO](https://docs.oracle.com/en/java/javase/18/core/java-nio.html)
 ```
 Path path = Paths.get( "C:/log/sample.txt" );
 try
