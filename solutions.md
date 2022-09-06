@@ -4,7 +4,7 @@ a collection of samples
 ## Table of Contents
 - [Convert an integer into binary representation](#convert_to_binary)
 - [Read a text file line by line using NIO](#read_text_file_nio)
-- [Create SHA-256 Checksum of a file](#create_sha_256)
+- [Create SHA-256 checksum of a file](#Create-SHA-256-Checksum-of-a-file)
 
 ## Convert an integer into binary representation
 ```java
@@ -36,7 +36,7 @@ catch( IOException e )
 
   private static void dumpChecksum( Path path )
   {
-    try( InputStream is = Files.newInputStream( path ) )
+    try( InputStream is = Files.newInputStream( path, StandardOpenOption.READ ) )
     {
       MessageDigest shaDigest = MessageDigest.getInstance( "SHA-256" );
 
