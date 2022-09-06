@@ -4,7 +4,7 @@
 
 ### Java 
 * [This](solutions.md) knowledge base contains a collection of specific problems and their solutions with
-the Java programming language.
+the **Java** programming language.
 
 
 
