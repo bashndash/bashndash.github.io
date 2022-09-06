@@ -2,7 +2,7 @@
 a collection of samples
 
 ## Table of Contents
-- [Convert an integer into binary representation](#convert_to_binary)
+- [Convert an integer into binary representation](#Convert-an-integer-into-binary-representation)
 - [Read a text file line by line using NIO](#read_text_file_nio)
 - [Create SHA-256 checksum of a file](#Create-SHA-256-Checksum-of-a-file)
 
