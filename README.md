@@ -1,7 +1,5 @@
 # bashndash.github.io
 
-```java
-public static void main( args[] )
-{
-}
-```
+## Java Knowledge Base
+[Problems and Solutions](/solutions.md)
+
