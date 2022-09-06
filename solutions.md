@@ -3,8 +3,8 @@ a collection of samples
 
 ## Table of Contents
 - [Convert an integer into binary representation](#convert-an-integer-into-binary-representation)
-- [Read a text file line by line using NIO](#read-a-text-file-line-by-line-using-niohttpsdocsoraclecomenjavajavase18corejavaniohtml))
-- [Create SHA-256 checksum of a file](#create-sha-256-Checksum-of-a-file)
+- [Read a text file line by line using NIO](#read-a-text-file-line-by-line-using-niohttpsdocsoraclecomenjavajavase18corejavaniohtml)
+- [Create SHA-256 checksum of a file](#create-sha-256-checksum-of-a-file)
 
 ## Convert an integer into binary representation
 ```java
