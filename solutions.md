@@ -24,3 +24,64 @@ catch( IOException e )
 }
 ```
 
+## Create SHA-256 Checksum of a file
+```java
+
+  public static void main(String[] args)
+  {
+    Path path = Paths.get( "C:/log/sample.txt" );
+    dumpChecksum( path );
+  }
+
+  private static void dumpChecksum( Path path )
+  {
+    try( InputStream is = Files.newInputStream( path ) )
+    {
+      MessageDigest shaDigest = MessageDigest.getInstance( "SHA-256" );
+
+      //byte array to read data in chunks
+      byte[] byteArray = new byte[1024];
+      int bytesCount = 0;
+
+      //read data and update digest until file ends
+      while( (bytesCount = is.read( byteArray ) ) != -1 )
+      {
+        shaDigest.update(byteArray, 0, bytesCount);
+      };
+
+      // get digest as byte array
+      byte[] digest = shaDigest.digest();
+
+      StringBuilder sb = new StringBuilder();
+      for( byte b : digest )
+      {
+        // turn (signed) byte into unsigned byte (0-255)
+        int unsignedInt = Byte.toUnsignedInt( b );
+
+        // convert to a string representing a hex number ("0"-"ff")
+        String hexString = Integer.toHexString( unsignedInt );
+
+        // append leading zero if necessary
+        if( unsignedInt < 10 )
+        {
+          sb.append( "0" );
+        }
+
+        // convert signed integer to hex (00-FF)
+        sb.append( hexString.toUpperCase( Locale.ROOT ) );
+      }
+
+      System.out.println( sb.toString() );
+    }
+    catch( IOException e )
+    {
+      e.printStackTrace();
+    }
+    catch( NoSuchAlgorithmException e )
+    {
+      e.printStackTrace();
+    }
+  }
+```
+
+
