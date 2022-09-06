@@ -4,6 +4,7 @@ a collection of samples
 ## Table of Contents
 - [Convert an integer into binary representation](#convert_to_binary)
 - [Read a text file line by line using NIO](#read_text_file_nio)
+- [Create SHA-256 Checksum of a file](#create_sha_256)
 
 ## Convert an integer into binary representation
 ```java
