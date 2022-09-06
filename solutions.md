@@ -13,7 +13,7 @@ String binaryRepresentation = Integer.toBinaryString( number );
 ```
 
 ## Read a text file line by line using NIO
-See [Java-NIO](https://docs.oracle.com/en/java/javase/18/core/java-nio.html)
+See [Java-NIO](https://docs.oracle.com/en/java/javase/18/core/java-nio.html) for further information.
 ```java
 Path path = Paths.get( "C:/log/sample.txt" );
 try
