@@ -1,7 +1,4 @@
-# Java Problems and Solutions
-a collection of samples
-
-## Table of Contents
+## Table of Contents~~~~
 <!-- TOC -->
 * [Java Problems and Solutions](#java-problems-and-solutions)
   * [Table of Contents](#table-of-contents)
@@ -9,6 +6,9 @@ a collection of samples
   * [Read a text file line by line using NIO](#read-a-text-file-line-by-line-using-nio)
   * [Create SHA-256 checksum of a file](#create-sha-256-checksum-of-a-file)
 <!-- TOC -->
+
+# Java Problems and Solutions
+a collection of samples
 
 ## Convert an integer into binary representation
 ```java
