@@ -30,7 +30,7 @@ catch( IOException e )
 }
 ```
 
-## Create SHA-256 Checksum of a file
+## Create SHA-256 checksum of a file
 ```java
 
   public static void main(String[] args)
