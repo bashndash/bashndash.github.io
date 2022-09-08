@@ -10,15 +10,17 @@
 <!-- TOC -->
 
 # Java Problems and Solutions
-a collection of samples
+This is a collection of practical examples and frequently used pieces of code.
 
 ## Convert an integer into binary representation
+Almost too simple. With java 8 there comes a method.
 ```java
 int number = 21;
 String binaryRepresentation = Integer.toBinaryString( number );
 ```
 
 ## Read a text file line by line using NIO
+Sometimes you are just interested in the lines of text.
 See [Java-NIO](https://docs.oracle.com/en/java/javase/18/core/java-nio.html) for further information.
 ```java
 Path path = Paths.get( "C:/log/sample.txt" );
@@ -33,6 +35,8 @@ catch( IOException e )
 ```
 
 ## Create SHA-256 checksum of a file
+Writing your own duplicate search or anything like that? Often you need a unique identification of 
+a file, except file size. 
 ```java
 
   public static void main(String[] args)
