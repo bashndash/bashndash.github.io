@@ -6,6 +6,7 @@
   * [Read a text file line by line using NIO](#read-a-text-file-line-by-line-using-nio)
   * [Create SHA-256 checksum of a file](#create-sha-256-checksum-of-a-file)
   * [Write random bytes to a file](#write-random-bytes-to-a-file)
+  * [Implementing a very simple stopwatch](#implementing-a-very-simple-stopwatch)
 <!-- TOC -->
 
 # Java Problems and Solutions
