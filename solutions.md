@@ -1,10 +1,11 @@
-## Table of Contents~~~~
+## Table of Contents
 <!-- TOC -->
-* [Java Problems and Solutions](#java-problems-and-solutions)
   * [Table of Contents](#table-of-contents)
+* [Java Problems and Solutions](#java-problems-and-solutions)
   * [Convert an integer into binary representation](#convert-an-integer-into-binary-representation)
   * [Read a text file line by line using NIO](#read-a-text-file-line-by-line-using-nio)
   * [Create SHA-256 checksum of a file](#create-sha-256-checksum-of-a-file)
+  * [Write random bytes to a file](#write-random-bytes-to-a-file)
 <!-- TOC -->
 
 # Java Problems and Solutions
@@ -88,6 +89,49 @@ catch( IOException e )
       e.printStackTrace();
     }
   }
+```
+## Write random bytes to a file
+In this example we fill a byte array with arbitrary random data which is then wrapped into
+the byte buffer. The byte buffer is written to a file via the channel. This example obviously
+makes no sense at first glance but sometimes it can be very useful to create binary blobs with 
+random content for testing purposes.
+```java
+Random rng = new Random( System.currentTimeMillis() );
+byte[] bytes = new byte[1024];
+rng.nextBytes( bytes );
+ByteBuffer buffer = ByteBuffer.wrap( bytes );
+try( WritableByteChannel channel = Files.newByteChannel( newPath, StandardOpenOption.CREATE_NEW ) )
+{
+  channel.write( buffer );
+}
+catch( IOException e )
+{
+  e.printStackTrace();
+}
+```
+You can play with the buffer size. For creating many very large files in acceptable time the following approach can be used.
+Note the usage of StandardOpenOption.APPEND.
+```java
+for( int i = 0; i < nFiles; i++ )
+{
+  Path newPath = createIndexedFilePath( this.basePath, i );
+  deleteIfExistAndCreate( newPath );
+  Random rng = new Random( System.currentTimeMillis() );
+  for( int j = 0; j < nBlocks; j++ )
+  {
+    byte[] bytes = new byte[16384]; // use a bigger block size for performance
+    rng.nextBytes(bytes);
+    ByteBuffer buffer = ByteBuffer.wrap( bytes );
+    try( WritableByteChannel channel = Files.newByteChannel( newPath, StandardOpenOption.APPEND ) )
+    {
+      channel.write( buffer );
+    }
+    catch( IOException e )
+    {
+      e.printStackTrace();
+    }
+  }
+}
 ```
 
 
