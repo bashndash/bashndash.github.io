@@ -134,4 +134,70 @@ for( int i = 0; i < nFiles; i++ )
 }
 ```
 
+## Implementing a very simple stopwatch
+This is useful for rough run time estimates. Feel free to refine the format of elapsed time.
+```java
+public class StopWatch
+{
+  private Instant start;
+  private Instant stop;
+
+  private boolean isRunning;
+
+  public StopWatch()
+  {
+    this.stop = Instant.now();
+    this.isRunning = false;
+  }
+
+  public void start()
+  {
+    this.start = Instant.now();
+    this.stop = null;
+    this.isRunning = true;
+  }
+
+  public void stop()
+  {
+    this.stop = Instant.now();
+    this.isRunning = false;
+  }
+
+  public boolean isRunning()
+  {
+    return this.isRunning;
+  }
+
+  public String getFormattedTimeInSeconds()
+  {
+    double seconds = getElapsedSeconds();
+    return String.format( "%.3f", seconds );
+  }
+
+  public Duration getDuration()
+  {
+    return doGetDuration();
+  }
+
+  public double getElapsedSeconds()
+  {
+    long nanos = doGetDuration().toNanos();
+    return ( (double) nanos) / 1e9;
+  }
+
+  private Duration doGetDuration()
+  {
+    Duration duration = null;
+    if( null == this.stop )
+    {
+      duration = Duration.between( this.start, Instant.now() );
+    }
+    else
+    {
+      duration = Duration.between( this.start, this.stop );
+    }
+    return duration;
+  }
+```
+
 
