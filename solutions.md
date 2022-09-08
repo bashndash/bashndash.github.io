@@ -9,8 +9,9 @@
   * [Implementing a very simple stopwatch](#implementing-a-very-simple-stopwatch)
 <!-- TOC -->
 
-# Java Problems and Solutions
+# Java practical examples
 This is a collection of practical examples and frequently used pieces of code.
+Date: 2022-09
 
 ## Convert an integer into binary representation
 Almost too simple. With java 8 there comes a method.
